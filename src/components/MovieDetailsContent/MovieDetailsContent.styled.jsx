@@ -6,13 +6,22 @@ export const MovieDetailsContainer = styled.div`
   gap: 20px;
   background-color: #fcfcfc;
   padding: 20px;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const MovieImage = styled.img`
   width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const MovieInfoContainer = styled.div`
@@ -20,8 +29,8 @@ export const MovieInfoContainer = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 20px;
 `;
 
 export const MovieOverview = styled.p`

@@ -17,13 +17,13 @@ export const MovieDetailsContent = ({ movie }) => {
         alt={movie.title}
       />
       <MovieInfoContainer>
+        <MovieInfo>
+          <MovieInfoSpan>User Score:</MovieInfoSpan> {movie.vote_average}
+        </MovieInfo>
         <MovieTitle>{movie.title}</MovieTitle>
         <MovieOverview>{movie.overview}</MovieOverview>
         <MovieInfo>
           <MovieInfoSpan>Release Date:</MovieInfoSpan> {movie.release_date}
-        </MovieInfo>
-        <MovieInfo>
-          <MovieInfoSpan>User Score:</MovieInfoSpan> {movie.vote_average}
         </MovieInfo>
         <MovieInfo>
           <MovieInfoSpan>Genres:</MovieInfoSpan>
