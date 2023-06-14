@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -41,7 +42,9 @@ const Home = () => {
         ) : (
           <ul>
             {movies.map(movie => (
-              <li key={movie.id}>{movie.title}</li>
+              <li key={movie.id}>
+                <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              </li>
             ))}
           </ul>
         )}
