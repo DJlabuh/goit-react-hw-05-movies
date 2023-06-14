@@ -19,4 +19,14 @@ const getMovies = async () => {
   }
 };
 
-export default getMovies;
+const getMovieById = async (movieId) => {
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+};
+
+export { getMovies, getMovieById };

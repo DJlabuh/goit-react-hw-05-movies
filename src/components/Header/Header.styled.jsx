@@ -22,7 +22,8 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: #333;
 
-  &:hover {
-    background-color: #ccc;
+  &.active {
+    color: #f16f6f;
+    border-bottom: 1px solid red;
   }
 `;
