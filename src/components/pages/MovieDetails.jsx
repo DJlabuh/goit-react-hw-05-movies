@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Outlet, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getMovieById } from '../../services/getMovie';
 import { Loader } from '../Loader';
 import { MovieDetailsContent } from '../MovieDetailsContent';
+import { StyledContainer } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -27,10 +28,13 @@ const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <StyledContainer>
       <ToastContainer autoClose={2000} />
       {isLoading ? <Loader /> : <MovieDetailsContent movie={movie} />}
-    </div>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </StyledContainer>
   );
 };
 

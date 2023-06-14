@@ -29,4 +29,14 @@ const getMovieById = async (movieId) => {
   }
 };
 
-export { getMovies, getMovieById };
+const getMovieCredits = async (movieId) => {
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+};
+
+export { getMovies, getMovieById, getMovieCredits };
