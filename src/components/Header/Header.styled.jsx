@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 export const HeaderContainer = styled.header`
   background-color: #f2f2f2;
   padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 export const List = styled.ul`
@@ -24,6 +27,9 @@ export const StyledNavLink = styled(NavLink)`
 
   &.active {
     color: #f16f6f;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #f16f6f;
+  }
+  &:hover {
+    color: #f16f6f;
   }
 `;
