@@ -49,4 +49,15 @@ const getMovieReviews = async (movieId) => {
   }
 };
 
-export { getMovies, getMovieById, getMovieCredits, getMovieReviews };
+const searchMovies = async (keyword) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?query=${keyword}&language=en-US`, options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+};
+
+export { getMovies, getMovieById, getMovieCredits, getMovieReviews, searchMovies, };
