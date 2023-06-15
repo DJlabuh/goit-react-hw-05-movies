@@ -4,6 +4,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getMovieCredits } from '../../services/getMovie';
 import { Loader } from '../Loader';
+import {
+  CastList,
+  CastListItem,
+  CastImage,
+  CastName,
+  CastCharacter,
+} from './Cast.styled';
+import placeholderImage from './person-placeholder.jpg';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -22,7 +30,7 @@ export const Cast = () => {
         }));
         setCast(filteredCast);
       } catch (error) {
-        toast.error(`Error: ${error.message}`);
+        toast.error(`Ошибка: ${error.message}`);
       } finally {
         setIsLoading(false);
       }
@@ -37,21 +45,22 @@ export const Cast = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          <div>Cast</div>
-          <ul>
-            {cast.map(actor => (
-              <li key={actor.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-                  alt={actor.name}
-                />
-                <p>Name: {actor.name}</p>
-                <p>Character: {actor.character}</p>
-              </li>
-            ))}
-          </ul>
-        </>
+        <CastList>
+          {cast.map(actor => (
+            <CastListItem key={actor.id}>
+              <CastImage
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
+                    : placeholderImage
+                }
+                alt={actor.name}
+              />
+              <CastName>{actor.name}</CastName>
+              <CastCharacter>Character: {actor.character}</CastCharacter>
+            </CastListItem>
+          ))}
+        </CastList>
       )}
     </>
   );

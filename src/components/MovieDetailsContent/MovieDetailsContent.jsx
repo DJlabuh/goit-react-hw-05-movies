@@ -8,6 +8,7 @@ import {
   MovieOverview,
   MovieInfoSpan,
   MovieInfo,
+  AdditionalInformationContainer,
 } from './MovieDetailsContent.styled';
 
 export const MovieDetailsContent = ({ movie }) => {
@@ -33,7 +34,7 @@ export const MovieDetailsContent = ({ movie }) => {
           </MovieInfo>
         </MovieInfoContainer>
       </MovieDetailsContainer>
-      <div>
+      <AdditionalInformationContainer>
         <h3>Additional information</h3>
         <ul>
           <li>
@@ -43,7 +44,7 @@ export const MovieDetailsContent = ({ movie }) => {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
-      </div>
+      </AdditionalInformationContainer>
     </>
   );
 };

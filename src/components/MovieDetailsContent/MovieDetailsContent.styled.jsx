@@ -4,6 +4,7 @@ export const MovieDetailsContainer = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  margin-bottom: 30px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -38,5 +39,12 @@ export const MovieInfoSpan = styled.span`
 `;
 
 export const MovieInfo = styled.p`
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+`;
+
+export const AdditionalInformationContainer = styled.div`
+  border-top: 1px solid #b6b5b5;
+  border-bottom: 1px solid #b6b5b5;
+  padding: 15px;
+  margin-bottom: 30px;
 `;
