@@ -4,6 +4,7 @@ export const CastList = styled.ul`
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0;
   grid-gap: 20px;
 
   @media (max-width: 768px) {
@@ -19,9 +20,12 @@ export const CastListItem = styled.li`
 `;
 
 export const CastImage = styled.img`
-  width: 100%;
+  width: 90%;
   height: auto;
   margin-bottom: 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const CastName = styled.p`
