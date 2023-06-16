@@ -19,20 +19,27 @@ const Movies = () => {
     const query = event.target.elements[0].value.trim();
 
     if (query === '') {
-      toast.error('Enter movie title');
+      toast.error('Please enter a movie title');
       return;
     }
 
     try {
       setIsLoading(true);
       const response = await searchMovies(query);
-      const transformedMovies = response.results.map(movie => ({
-        id: movie.id,
-        img: movie.poster_path,
-        title: movie.title,
-      }));
-      setSearchingMovies(transformedMovies);
-      setSearchParams({ film: query });
+
+      if (response.results.length === 0) {
+        toast.error('No results found');
+        setSearchParams({ query: '' });
+        event.target.reset();
+      } else {
+        const transformedMovies = response.results.map(movie => ({
+          id: movie.id,
+          img: movie.poster_path,
+          title: movie.title,
+        }));
+        setSearchingMovies(transformedMovies);
+        setSearchParams({ film: query });
+      }
     } catch (error) {
       toast.error(`Error: ${error.message}`);
     } finally {

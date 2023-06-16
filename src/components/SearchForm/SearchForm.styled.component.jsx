@@ -14,7 +14,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -22,7 +22,7 @@ export const Input = styled.input`
 
   @media screen and (max-width: 768px) {
     margin-bottom: 10px;
-    width: 100%;
+    width: 90%;
   }
 `;
 
