@@ -26,11 +26,11 @@ export const Cast = () => {
           name: actor.name,
           id: actor.id,
           profile_path: actor.profile_path,
-          character: actor.character,
+          character: actor.character || 'Unknown',
         }));
         setCast(filteredCast);
       } catch (error) {
-        toast.error(`Ошибка: ${error.message}`);
+        toast.error(`Error: ${error.message}`);
       } finally {
         setIsLoading(false);
       }
