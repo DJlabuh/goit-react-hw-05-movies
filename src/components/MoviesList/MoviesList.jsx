@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import {
   Wrapper,
@@ -10,11 +11,13 @@ import {
 import placeholderImage from './placeholder.jpg';
 
 export const MoviesList = ({ movies }) => {
+  const location = useLocation();
+
   return (
     <Wrapper>
       {movies.map(movie => (
         <StyledListItem key={movie.id}>
-          <StyledLink to={`/movies/${movie.id}`}>
+          <StyledLink to={`/movies/${movie.id}`} state={{ from: location }}>
             <StyledImage
               src={
                 movie.img

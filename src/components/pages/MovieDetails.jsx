@@ -1,16 +1,19 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getMovieById } from '../../services/getMovie';
 import { Loader } from '../Loader';
 import { MovieDetailsContent } from '../MovieDetailsContent';
+import { BackLink } from '../BackLink';
 import { StyledContainer } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -30,6 +33,7 @@ const MovieDetails = () => {
   return (
     <StyledContainer>
       <ToastContainer autoClose={2000} />
+      <BackLink to={backLinkHref}>Back to products</BackLink>
       {isLoading ? <Loader /> : <MovieDetailsContent movie={movie} />}
       <Suspense fallback={<Loader />}>
         <Outlet />
