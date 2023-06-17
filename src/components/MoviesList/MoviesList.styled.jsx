@@ -48,7 +48,7 @@ export const StyledImage = styled.img`
   margin-bottom: 10px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 300px;
     height: auto;
   }
 `;
