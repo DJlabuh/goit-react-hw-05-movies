@@ -4,7 +4,7 @@ import { StyledLink } from './BackLink.styled';
 export const BackLink = ({ to, children }) => {
   return (
     <StyledLink to={to}>
-      <HiArrowLeft size="24" />
+      <HiArrowLeft size="12" />
       {children}
     </StyledLink>
   );

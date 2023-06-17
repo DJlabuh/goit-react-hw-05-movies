@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   MovieDetailsContainer,
   MovieImage,
@@ -9,6 +8,9 @@ import {
   MovieInfoSpan,
   MovieInfo,
   AdditionalInformationContainer,
+  StyledList,
+  StyledListItem,
+  StyledLink,
 } from './MovieDetailsContent.styled';
 
 export const MovieDetailsContent = ({ movie }) => {
@@ -36,14 +38,14 @@ export const MovieDetailsContent = ({ movie }) => {
       </MovieDetailsContainer>
       <AdditionalInformationContainer>
         <h3>Additional information</h3>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
+        <StyledList>
+          <StyledListItem>
+            <StyledLink to="cast">Cast</StyledLink>
+          </StyledListItem>
+          <StyledListItem>
+            <StyledLink to="reviews">Reviews</StyledLink>
+          </StyledListItem>
+        </StyledList>
       </AdditionalInformationContainer>
     </>
   );

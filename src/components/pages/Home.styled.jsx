@@ -11,5 +11,6 @@ export const StyledContainer = styled.div`
 export const StyledHeading = styled.h2`
   color: #333;
   font-size: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  text-align: center;
 `;
