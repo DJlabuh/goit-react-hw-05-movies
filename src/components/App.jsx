@@ -3,12 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
 
-import { Cast } from '../components/Cast';
-import { Reviews } from '../components/Reviews';
-
 const Home = lazy(() => import('components/pages/Home'));
 const Movies = lazy(() => import('components/pages/Movies'));
 const MovieDetails = lazy(() => import('components/pages/MovieDetails'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 const App = () => {
   return (

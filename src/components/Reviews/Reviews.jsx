@@ -9,7 +9,7 @@ import { getMovieReviews } from '../../services/getMovie';
 import { Loader } from '../Loader';
 import { ReviewList, ReviewItem, Author } from './Reviews.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -58,3 +58,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

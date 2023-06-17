@@ -16,7 +16,7 @@ import {
 } from './Cast.styled';
 import placeholderImage from './person-placeholder.jpg';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -48,23 +48,31 @@ export const Cast = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <CastList>
-          {cast.map(actor => (
-            <CastListItem key={actor.id}>
-              <CastImage
-                src={
-                  actor.profile_path
-                    ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
-                    : placeholderImage
-                }
-                alt={actor.name}
-              />
-              <CastName>{actor.name}</CastName>
-              <CastCharacter>Character: {actor.character}</CastCharacter>
-            </CastListItem>
-          ))}
-        </CastList>
+        <>
+          {cast.length > 0 ? (
+            <CastList>
+              {cast.map(actor => (
+                <CastListItem key={actor.id}>
+                  <CastImage
+                    src={
+                      actor.profile_path
+                        ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
+                        : placeholderImage
+                    }
+                    alt={actor.name}
+                  />
+                  <CastName>{actor.name}</CastName>
+                  <CastCharacter>Character: {actor.character}</CastCharacter>
+                </CastListItem>
+              ))}
+            </CastList>
+          ) : (
+            <p>We don't have any cast for this movie.</p>
+          )}
+        </>
       )}
     </>
   );
 };
+
+export default Cast;

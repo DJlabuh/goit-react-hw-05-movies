@@ -13,12 +13,18 @@ import {
   StyledLink,
 } from './MovieDetailsContent.styled';
 
+import placeholderImage from './placeholder.jpg';
+
 export const MovieDetailsContent = ({ movie }) => {
   return (
     <>
       <MovieDetailsContainer>
         <MovieImage
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+              : placeholderImage
+          }
           alt={movie.title}
         />
         <MovieInfoContainer>
