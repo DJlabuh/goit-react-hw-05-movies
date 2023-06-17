@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { getMovieReviews } from '../../services/getMovie';
+
 import { Loader } from '../Loader';
 import { ReviewList, ReviewItem, Author } from './Reviews.styled';
 

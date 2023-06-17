@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { Form, Input, Button } from './SearchForm.styled.component';
 
 export const SearchForm = ({ handleSubmit }) => {

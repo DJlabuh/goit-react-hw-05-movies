@@ -1,8 +1,11 @@
-import React, { Suspense, useEffect, useState, useRef } from 'react';
+import { Suspense, useEffect, useState, useRef } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { getMovieById } from '../../services/getMovie';
+
 import { Loader } from '../Loader';
 import { MovieDetailsContent } from '../MovieDetailsContent';
 import { BackLink } from '../BackLink';
